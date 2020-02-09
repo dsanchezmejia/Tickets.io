@@ -7,24 +7,24 @@ use Illuminate\Console\Command;
 class CrudGenerator extends Command
 {
 
-     * @var string
+
 
     protected $signature = 'Crud:Generator {name:Class(singular) for example User}';
 
 
-     * @var string
+
 
     protected $description = 'Create Crud Operations';
 
 
-     * @return void
+
 
     public function __construct()
     {
         parent::__construct();
     }
 
-     * @return mixed
+
 
      public function handle(){
     $name = $this->argument('name');
@@ -76,3 +76,4 @@ class CrudGenerator extends Command
 
     file_put_contents(app_path("/Http/Requests/{$name}Request.php"), $plantilla);
   }
+}
