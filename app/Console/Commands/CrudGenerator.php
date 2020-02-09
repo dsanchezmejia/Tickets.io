@@ -3,13 +3,16 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+use Artisan;
 
 class CrudGenerator extends Command
 {
 
 
 
-    protected $signature = 'Crud:Generator {name:Class(singular) for example User}';
+    protected $signature = 'Crud:Generator {name :Class(singular) for example User}';
 
 
 
