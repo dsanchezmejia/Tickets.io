@@ -12,7 +12,7 @@ class CrudGenerator extends Command
 
 
 
-    protected $signature = 'Crud:Generator {name :Class(singular) for example User}';
+    protected $signature = 'Crud:Generator {name : Class (singular) for example User}';
 
 
 
