@@ -1,3 +1,5 @@
+<?php
+
 Route::get('/', ['middleware' => 'auth', function () {
     return view('/dashboard');
 }]);
