@@ -17,7 +17,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -34,6 +34,8 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">{{ __('Name') }}</th>
+                                    <th scope="col">{{ __('Lastname') }}</th>
+                                    <th scope="col">{{ __('Username') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
                                     <th scope="col">{{ __('Creation Date') }}</th>
                                     <th scope="col"></th>
@@ -43,6 +45,8 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $user->name }}</td>
+                                          <td>{{ $user->lastname }}</td>
+                                            <td>{{ $user->username }}</td>
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
@@ -57,12 +61,12 @@
                                                         <form action="{{ route('user.destroy', $user) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('user.edit', $user) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
+                                                        </form>
                                                     @else
                                                         <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Edit') }}</a>
                                                     @endif
@@ -82,7 +86,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection
