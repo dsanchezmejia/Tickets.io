@@ -10,30 +10,21 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
+
     protected $fillable = [
         'name','lastname','username', 'email', 'password', 'api_token'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function parameter_insert_user_id(){
+          return $this->hasMany('App\Parameter', 'insert_user_id', 'id');
+        }//end if
+        public function parameter_update_user_id(){
+          return $this->hasMany('App\Parameter', 'update_user_id', 'id');
+        }//end if
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-}
+}//end class
