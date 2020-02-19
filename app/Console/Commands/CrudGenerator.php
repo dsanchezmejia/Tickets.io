@@ -16,10 +16,10 @@ class CrudGenerator extends Command{
     }//end function
 
     public function handle(){
-     $name = $this->argument('name');
-    $this->model($name);
-    $this->controller($name);
-    $this->request($name);
+      $name = $this->argument('name');
+      $this->model($name);
+      $this->controller($name);
+      $this->request($name);
       $this->view($name, 'index');
       $this->view($name, 'create');
       $this->view($name, 'edit');
