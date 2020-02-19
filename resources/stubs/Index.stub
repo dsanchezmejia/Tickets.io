@@ -1,0 +1,11 @@
+<nav class="d-flex justify-content-end" aria-label="...">
+                            {{ $**modelNamePluralLowerCase**->links() }}
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @include('layouts.footers.auth')
+    </div>
+@endsection
