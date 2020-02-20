@@ -13,8 +13,8 @@
   @php
     $valid_route = (isset($route) ? route($route) :'#');
   @endphp
-  <a href="{{ $valid_route }}" class="btn btn-icon btn-sm btn-outline-primary" >
+  <a href="{{ $valid_route ?? '#' }}" class="btn btn-icon btn-sm btn-outline-primary" >
     <span class="btn-inner--icon"><i class="fa fa-plus"></i></span>
-    <span class="btn-inner--text">{{ $title ?? 'Error' }}</span>
+    <span class="btn-inner--text">{{ $title ?? 'Agregar' }}</span>
   </a>
 @endif
